@@ -8,8 +8,8 @@ package page
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "github.com/tyspice/go-templ/view/layout"
-import "github.com/tyspice/go-templ/view/component"
+import "github.com/tyspice/spicenet/view/layout"
+import "github.com/tyspice/spicenet/view/component"
 
 func Home(heading string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {

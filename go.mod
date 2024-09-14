@@ -1,4 +1,4 @@
-module github.com/tyspice/go-templ
+module github.com/tyspice/spicenet
 
 go 1.22.2
 

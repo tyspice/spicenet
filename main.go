@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/labstack/echo/v4"
-	"github.com/tyspice/go-templ/view/page"
+	"github.com/tyspice/spicenet/view/page"
 )
 
 func readFileContents(filepath string) (string, error) {
