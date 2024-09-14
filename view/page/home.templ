@@ -1,0 +1,12 @@
+package page
+
+import "github.com/tyspice/go-templ/view/layout"
+import "github.com/tyspice/go-templ/view/component"
+
+templ Home(heading string) {
+  @layout.Base(heading) {
+    <div class="flex flex-col justify-center h-full">
+      @component.Hello()
+    </div>
+  }
+}
