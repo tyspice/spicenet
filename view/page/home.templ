@@ -1,12 +1,14 @@
 package page
 
-import "github.com/tyspice/spicenet/view/layout"
-import "github.com/tyspice/spicenet/view/component"
+import (
+	"github.com/tyspice/spicenet/view/component"
+	"github.com/tyspice/spicenet/view/layout"
+)
 
 templ Home(heading string) {
-  @layout.Base(heading) {
-    <div class="flex flex-col justify-center h-full">
-      @component.Hello()
-    </div>
-  }
+	@layout.Base(heading) {
+		<div class="flex flex-col justify-center h-full">
+			@component.Hello()
+		</div>
+	}
 }
