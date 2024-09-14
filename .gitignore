@@ -2,3 +2,4 @@ node_modules
 bin
 tmp
 public/assets/styles.css
+**/*_templ.go
