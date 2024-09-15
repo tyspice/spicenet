@@ -1,6 +1,11 @@
 package layout
 
-templ Base(heading string) {
+import _ "embed"
+
+//go:embed heading.txt
+var heading string
+
+templ Base() {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
