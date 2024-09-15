@@ -5,6 +5,9 @@ import _ "embed"
 //go:embed heading.txt
 var heading string
 
+//go:embed small-heading.txt
+var smallHeading string
+
 templ Base() {
 	<!DOCTYPE html>
 	<html lang="en">
@@ -18,17 +21,22 @@ templ Base() {
 		<body hx-boost="true" class="bg-indigo-950 h-screen w-screen p-8">
 			<div class="flex flex-col border-2 border-indigo-500 p-3 rounded-lg size-full">
 				<!-- Header -->
-				<div class=" flex text-indigo-500 p-5 border-indigo-500 border-b-2 border-double h-fit w-full justify-between">
-					<div>
+				<div class=" flex flex-wrap flex-col sm:flex-row text-indigo-500 p-5 border-indigo-500 border-b-2 border-double h-fit w-full items-center sm:items-end sm:justify-between">
+					<div class="hidden sm:block">
 						<pre>
 							{ heading }
 						</pre>
 					</div>
-					<div class="flex flex-row items-end">
+					<div class="sm:hidden">
+						<pre>
+							{ smallHeading }
+						</pre>
+					</div>
+					<div class="flex flex-row items-end space-x-5 mt-7">
 						<div>
 							<a href="/" class="text-4xl">Home</a>
 						</div>
-						<div class="ms-5">
+						<div>
 							<a href="/about" class="text-4xl">About</a>
 						</div>
 					</div>
