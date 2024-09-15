@@ -1,11 +1,17 @@
 package main
 
 import (
+	"embed"
+	"net/http"
 	"os"
 
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/tyspice/spicenet/view/page"
 )
+
+//go:embed public/assets/*
+var assets embed.FS
 
 func readFileContents(filepath string) (string, error) {
 	content, err := os.ReadFile(filepath)
@@ -17,7 +23,10 @@ func readFileContents(filepath string) (string, error) {
 
 func main() {
 	e := echo.New()
-	e.Static("/assets", "./public/assets")
+	e.Use(middleware.StaticWithConfig(middleware.StaticConfig{
+		Root:       "public",
+		Filesystem: http.FS(assets),
+	}))
 
 	heading, err := readFileContents("./assets/heading.txt")
 	if err != nil {
