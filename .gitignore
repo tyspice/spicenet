@@ -3,3 +3,4 @@ bin
 tmp
 public/assets/styles.css
 **/*_templ.go
+deploy-dev

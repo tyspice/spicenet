@@ -2,7 +2,7 @@
 build:
 	@templ generate
 	@npx tailwindcss -i ./assets/styles/input.css -o ./public/assets/styles.css
-	@go build -o ./bin/tyspice.dev main.go
+	@go build -o ./bin/spicenet main.go
 
 tailwind:
 	@npx tailwindcss -i ./assets/styles/input.css -o ./public/assets/styles.css --watch
