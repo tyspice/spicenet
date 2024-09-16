@@ -5,3 +5,6 @@ public/assets/styles.css
 **/*_templ.go
 **/*_templ.txt
 deploy-dev
+.command1.pid
+.command2.pid
+.command3.pid
