@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Function to clean up background processes
+cleanup() {
+  echo "Terminating background processes..."
+  kill $(jobs -p)
+}
+
+# Trap SIGTERM signal to run the cleanup function
+trap cleanup SIGTERM
+
+# Run commands simultaneously in the background
+air & echo $! > .command1.pid
+npx tailwindcss -i ./assets/styles/input.css -o ./public/assets/styles.css --watch & echo $! > .command2.pid
+templ generate --watch & echo $! > .command3.pid
+
+# Wait for all background processes to finish
+wait
